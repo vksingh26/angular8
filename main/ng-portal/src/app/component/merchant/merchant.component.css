@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+mat-cell {
+  overflow: visible;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 98%;
+  margin: 10px 1%;
+}
+.mat-paginator {
+  margin-bottom: 64px;
+}
