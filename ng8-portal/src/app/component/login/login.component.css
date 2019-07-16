@@ -1,10 +1,13 @@
 .login-container {
   width: 100%;
   height: 100%;
-  background-color: cornflowerblue;
   font-size: 100%;
+  background:#03ABF6;
   display: flex;
   justify-content: center;
+  background-image:url("../../images/mobile-app.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .login-header {
@@ -14,13 +17,36 @@
 
 .login-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 550px;
   height: 100%;
-  max-height: 250px;
-  background: #ffffff;
+  max-height: 400px;
+  background: transparent;
   margin: auto 25px;
+  border-left: 6px solid #03ABF6;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
-
+.login-card:after {
+  content:'';
+  background: #000;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 450px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0.5;
+}
+.login-header,
+.login-content,
+.login-action {
+  position:relative;
+  z-index:1;
+  color: #fff
+}
 .login-content {
   display: grid;
   width: 80%;
@@ -30,11 +56,25 @@
 .login-action {
   width: 80%;
   margin: 10px auto;
-  display: flex;
-  justify-content: space-between;
 }
-
+.login-field{
+  background: #fff;
+  color: #333;
+  padding:14px 5px;
+  font-size: 16px;
+}
+.login-button{
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  background: #03ABF6;
+}
 .login-action-register {
   margin-top: 15px;
   align-items: center;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .login-container {
+    background-size: auto 100%;
+  }
 }
