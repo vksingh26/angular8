@@ -1,26 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons');
-/* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
-
-body,
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Roboto,
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  background: #ffffff;
-  color: #333333;
-}
-.cursor{
-  cursor: pointer;
-}
-.align-center{
-  text-align: center;
-}
 .mat-badge-content {
   font-weight: 600;
   font-size: 12px;
@@ -737,10 +714,12 @@ input.mat-input-element {
 
 @keyframes cdk-text-field-autofill-start {
   /*!*/
+  ;
 }
 
 @keyframes cdk-text-field-autofill-end {
   /*!*/
+  ;
 }
 
 .cdk-text-field-autofill-monitored:-webkit-autofill {
@@ -789,7 +768,7 @@ textarea.cdk-textarea-autosize-measuring {
 }
 
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
@@ -801,7 +780,7 @@ textarea.cdk-textarea-autosize-measuring {
 }
 
 .mat-optgroup-label {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-optgroup-disabled .mat-optgroup-label {
@@ -809,7 +788,7 @@ textarea.cdk-textarea-autosize-measuring {
 }
 
 .mat-pseudo-checkbox {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-pseudo-checkbox::after {
@@ -1191,7 +1170,7 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-button.mat-primary,
 .mat-icon-button.mat-primary,
 .mat-stroked-button.mat-primary {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-button.mat-accent,
@@ -1224,7 +1203,7 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-button.mat-primary .mat-button-focus-overlay,
 .mat-icon-button.mat-primary .mat-button-focus-overlay,
 .mat-stroked-button.mat-primary .mat-button-focus-overlay {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-button.mat-accent .mat-button-focus-overlay,
@@ -1312,7 +1291,7 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-flat-button.mat-primary,
 .mat-mini-fab.mat-primary,
 .mat-raised-button.mat-primary {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-fab.mat-accent,
@@ -1445,7 +1424,7 @@ textarea.cdk-textarea-autosize-measuring {
 
 .mat-button-toggle-checked {
   background-color: #212121;
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-button-toggle-checked.mat-button-toggle-appearance-standard {
@@ -1484,11 +1463,11 @@ textarea.cdk-textarea-autosize-measuring {
 }
 
 .mat-card-subtitle {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-checkbox-frame {
-  border-color: #333;
+  border-color: rgba(255, 255, 255, .7);
 }
 
 .mat-checkbox-checkmark {
@@ -1511,7 +1490,7 @@ textarea.cdk-textarea-autosize-measuring {
 
 .mat-checkbox-checked.mat-primary .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,
@@ -1534,7 +1513,7 @@ textarea.cdk-textarea-autosize-measuring {
 }
 
 .mat-checkbox-disabled .mat-checkbox-label {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 @media (-ms-high-contrast:active) {
@@ -1595,7 +1574,7 @@ textarea.cdk-textarea-autosize-measuring {
 }
 
 .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
-  background-color: #03ABF6;
+  background-color: #c2185b;
   color: #fff;
 }
 
@@ -1663,7 +1642,7 @@ th.mat-header-cell {
 }
 
 .mat-header-cell {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-cell,
@@ -1690,7 +1669,7 @@ th.mat-header-cell {
 }
 
 .mat-calendar-body-label {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-calendar-body-cell-content {
@@ -1717,7 +1696,7 @@ th.mat-header-cell {
 }
 
 .mat-calendar-body-selected {
-  background-color: #03ABF6;
+  background-color: #c2185b;
   color: #fff;
 }
 
@@ -1766,7 +1745,7 @@ th.mat-header-cell {
 }
 
 .mat-datepicker-toggle-active {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-datepicker-toggle-active.mat-accent {
@@ -1822,7 +1801,7 @@ th.mat-header-cell {
 
 .mat-expansion-indicator::after,
 .mat-expansion-panel-header-description {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-expansion-panel-header[aria-disabled=true] {
@@ -1835,15 +1814,15 @@ th.mat-header-cell {
 }
 
 .mat-form-field-label {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-hint {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-form-field.mat-focused .mat-form-field-label {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-form-field.mat-focused .mat-form-field-label.mat-accent {
@@ -1863,7 +1842,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple.mat-accent {
@@ -1875,7 +1854,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid).mat-accent .mat-form-field-infix::after {
@@ -1905,15 +1884,15 @@ th.mat-header-cell {
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-form-field-appearance-legacy .mat-hint {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
-  background-color: #333;
+  background-color: rgba(255, 255, 255, .7);
 }
 
 .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
@@ -1923,7 +1902,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-appearance-standard .mat-form-field-underline {
-  background-color: #333;
+  background-color: rgba(255, 255, 255, .7);
 }
 
 .mat-form-field-appearance-standard.mat-form-field-disabled .mat-form-field-underline {
@@ -1961,7 +1940,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-form-field-appearance-outline.mat-focused.mat-accent .mat-form-field-outline-thick {
@@ -1985,7 +1964,7 @@ th.mat-header-cell {
 }
 
 .mat-icon.mat-primary {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-icon.mat-accent {
@@ -1997,7 +1976,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after,
@@ -2006,7 +1985,7 @@ th.mat-header-cell {
 }
 
 .mat-input-element {
-  caret-color: #03ABF6;
+  caret-color: #c2185b;
 }
 
 .mat-input-element::placeholder {
@@ -2055,7 +2034,7 @@ th.mat-header-cell {
 }
 
 .mat-list-base .mat-subheader {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-list-item-disabled {
@@ -2107,7 +2086,7 @@ th.mat-header-cell {
 
 .mat-paginator,
 .mat-paginator-page-size .mat-select-trigger {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-paginator-decrement,
@@ -2137,7 +2116,7 @@ th.mat-header-cell {
 }
 
 .mat-progress-bar-fill::after {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-progress-bar.mat-accent .mat-progress-bar-background {
@@ -2180,18 +2159,18 @@ th.mat-header-cell {
 }
 
 .mat-radio-outer-circle {
-  border-color: #333;
+  border-color: rgba(255, 255, 255, .7);
 }
 
 .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
-  border-color: #03ABF6;
+  border-color: #c2185b;
 }
 
 .mat-radio-button.mat-primary .mat-radio-inner-circle,
 .mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
 .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple,
 .mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
@@ -2247,7 +2226,7 @@ th.mat-header-cell {
 }
 
 .mat-select-arrow {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-select-panel {
@@ -2263,7 +2242,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #03ABF6;
+  color: #c2185b;
 }
 
 .mat-form-field.mat-focused.mat-accent .mat-select-arrow {
@@ -2336,7 +2315,7 @@ th.mat-header-cell {
 }
 
 .mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
@@ -2344,7 +2323,7 @@ th.mat-header-cell {
 }
 
 .mat-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
@@ -2379,7 +2358,7 @@ th.mat-header-cell {
 .mat-primary .mat-slider-thumb,
 .mat-primary .mat-slider-thumb-label,
 .mat-primary .mat-slider-track-fill {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-primary .mat-slider-thumb-label-text {
@@ -2455,7 +2434,7 @@ th.mat-header-cell {
 }
 
 .mat-slider-has-ticks .mat-slider-wrapper::after {
-  border-color: #333;
+  border-color: rgba(255, 255, 255, .7);
 }
 
 .mat-slider-horizontal .mat-slider-ticks {
@@ -2481,18 +2460,18 @@ th.mat-header-cell {
 
 .mat-step-header .mat-step-label,
 .mat-step-header .mat-step-optional {
-  color: #333;
+  color: rgba(255, 255, 255, .7);
 }
 
 .mat-step-header .mat-step-icon {
-  background-color: #333;
+  background-color: rgba(255, 255, 255, .7);
   color: #fff;
 }
 
 .mat-step-header .mat-step-icon-selected,
 .mat-step-header .mat-step-icon-state-done,
 .mat-step-header .mat-step-icon-state-edit {
-  background-color: #03ABF6;
+  background-color: #c2185b;
   color: #fff;
 }
 
@@ -2576,7 +2555,7 @@ th.mat-header-cell {
 
 .mat-tab-group.mat-primary .mat-ink-bar,
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-tab-group.mat-primary.mat-background-primary .mat-ink-bar,
@@ -2641,7 +2620,7 @@ th.mat-header-cell {
 .mat-tab-group.mat-background-primary .mat-tab-links,
 .mat-tab-nav-bar.mat-background-primary .mat-tab-header,
 .mat-tab-nav-bar.mat-background-primary .mat-tab-links {
-  background-color: #03ABF6;
+  background-color: #c2185b;
 }
 
 .mat-tab-group.mat-background-primary .mat-tab-label,

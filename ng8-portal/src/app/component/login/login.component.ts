@@ -13,6 +13,10 @@ export class LoginComponent implements OnInit {
     console.log('Login Clicked !');
     this.router.navigate(['']);
   }
+  registerMe() {
+    console.log('Register Me clicked!');
+    this.router.navigate(['/register']);
+  }
 
   ngOnInit() {
   }
