@@ -37,12 +37,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { ProductListComponent } from './component/product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
+    PageNotFoundComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,

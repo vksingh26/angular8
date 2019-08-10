@@ -34,11 +34,10 @@ const registrationSchema = new Schema({
 });
 
 
-function validateUserReg(user){
-    console.log('validate user: ' + user);
+function validateUserReg(user) {
     const schema = {
         username: Joi.string().min(5).max(50).required(),
-        email: Joi.string().min(5).max(255).required().email(),
+        email: Joi.string().min(8).max(255).required().email(),
         password: Joi.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~^$;.@$!%*?#_&])[A-Za-z\d~^$;.@$!%*?#_&]{8,}$/).required().strict(),
         confirmPassword: Joi.string().valid(Joi.ref('password')).required().strict()
     };

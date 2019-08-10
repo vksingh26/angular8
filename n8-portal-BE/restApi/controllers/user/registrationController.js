@@ -1,4 +1,4 @@
-const {UserRegistration, validateUserReg} = require('../models/registration');
+const {UserRegistration, validateUserReg} = require('../../models/user/registration');
 const bcrypt = require('bcrypt');
 
 exports.postUserRegistration = async(req, res, next) => {
@@ -30,7 +30,7 @@ exports.postUserRegistration = async(req, res, next) => {
         await userRegistration
             .save()
             .then((result) => {
-                res.send('Thank you for your registration!');
+                res.status(201).send('Thank you for your registration!');
                 console.log('User Registered!' + result);
             }).catch((err) => {
                 console.log(err);
