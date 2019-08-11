@@ -5,7 +5,7 @@ export interface IRegisterCredentials {
   confirm_password: string;
 }
 export interface ILoginCredentials {
-  username: string;
+  email: string;
   password: string;
 }
 export interface IResetPassword {

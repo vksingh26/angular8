@@ -1,3 +1,4 @@
+<form name="form" #loginForm="ngForm" novalidate>
 <div class="login-container" id="login-container">
   <mat-card class="login-card">
     <mat-card-header class="login-header">
@@ -5,10 +6,10 @@
     </mat-card-header>
     <mat-card-content class="login-content">
       <mat-form-field class="form-input">
-        <input matInput class="login-field" placeholder="Username" autocomplete="off">
+        <input matInput class="login-field" placeholder="Email" [(ngModel)]="user.email" name="email" #email="ngModel" autocomplete="off">
       </mat-form-field>
       <mat-form-field class="form-input">
-        <input matInput class="login-field" type="password" placeholder="Password" autocomplete="off">
+        <input matInput class="login-field" type="password" placeholder="Password" [(ngModel)]="user.password" name="password" #password="ngModel" autocomplete="off">
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions class="login-action">
@@ -21,3 +22,4 @@
     </mat-card-actions>
   </mat-card>
 </div>
+</form>

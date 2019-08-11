@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   MatFormFieldModule, MatCardModule, MatInputModule, MatButtonModule, MatAutocompleteModule, MatBadgeModule,
@@ -39,6 +39,7 @@ import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { ProductListComponent } from './component/product-list/product-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,9 @@ import { ProductListComponent } from './component/product-list/product-list.comp
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatCardModule,
     MatFormFieldModule,

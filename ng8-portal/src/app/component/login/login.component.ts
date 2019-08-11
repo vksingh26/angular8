@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { AuthService } from 'src/app/service/auth.service';
+import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { ILoginCredentials } from 'src/app/interfaces/login';
+
 
 @Component({
   selector: 'app-login',
@@ -8,11 +11,19 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public loginForm: FormGroup;
+  user: any = {};
+  constructor(private router: Router, private authservice: AuthService, public form: FormBuilder) { }
 
-  constructor(private router: Router) { }
+  public buildForm() {
+    this.loginForm = this.form.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+    });
+  }
+
   login() {
-    console.log('Login Clicked !');
-    this.router.navigate(['/product']);
+    this.authservice.login(this.user);
   }
   registerMe() {
     console.log('Register Me clicked!');
@@ -20,6 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.buildForm();
   }
 
 }

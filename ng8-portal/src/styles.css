@@ -18,6 +18,9 @@ html {
 .cursor{
   cursor: pointer;
 }
+form{
+  height: 100%;
+}
 .align-center{
   text-align: center;
 }
@@ -259,6 +262,7 @@ html {
 .mat-form-field-infix {
   padding: .5em 0;
   border-top: .84375em solid transparent;
+  font-size: 16px;
 }
 
 .mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label,
@@ -286,7 +290,7 @@ html {
 }
 
 .mat-form-field-subscript-wrapper {
-  font-size: 75%;
+  font-size: 90%;
   margin-top: .66667em;
   top: calc(100% - 1.79167em);
 }
@@ -1835,7 +1839,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-label {
-  color: #333;
+  color: #03ABF6
 }
 
 .mat-hint {
@@ -1856,7 +1860,7 @@ th.mat-header-cell {
 }
 
 .mat-focused .mat-form-field-required-marker {
-  color: #b0bec5;
+  color: #03ABF6;
 }
 
 .mat-form-field-ripple {
@@ -1906,7 +1910,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
-  color: #333;
+  color: #03ABF6;
 }
 
 .mat-form-field-appearance-legacy .mat-hint {
@@ -1914,7 +1918,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
-  background-color: #333;
+  background-color: #03ABF6;
 }
 
 .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
@@ -1924,7 +1928,7 @@ th.mat-header-cell {
 }
 
 .mat-form-field-appearance-standard .mat-form-field-underline {
-  background-color: #333;
+  background-color: #03ABF6;
 }
 
 .mat-form-field-appearance-standard.mat-form-field-disabled .mat-form-field-underline {
