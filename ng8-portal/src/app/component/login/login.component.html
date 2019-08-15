@@ -13,7 +13,8 @@
         <div class="alert alert-danger" *ngIf="!!f.email.errors.email">Email must be a valid email address</div>
       </mat-error>
       <mat-form-field class="form-input">
-        <input matInput class="login-field" type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" autocomplete="off">
+        <input matInput class="login-field" type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" maxlength="46" autocomplete="off">
+        <span class="login-forgot-password">Forgot Password?</span>
       </mat-form-field>
       <mat-error *ngIf="submitted && !!f.password.errors">
         <div class="alert alert-danger" *ngIf="!!f.password.errors.required">Password is required</div>
