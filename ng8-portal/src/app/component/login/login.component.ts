@@ -11,9 +11,9 @@ import { ILoginCredentials } from 'src/app/interfaces/login';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public loginForm: FormGroup;
-  user: any = {};
-  constructor(private router: Router, private authservice: AuthService, public form: FormBuilder) { }
+  loginForm: FormGroup;
+  submitted = false;
+  constructor(private router: Router, private authservice: AuthService, private form: FormBuilder) { }
 
   public buildForm() {
     this.loginForm = this.form.group({
@@ -22,8 +22,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login() {
-    this.authservice.login(this.user);
+  get f() {
+    return this.loginForm.controls;
+  }
+
+  login(loginForm: FormGroup) {
+    this.submitted = true;
+    if (this.loginForm.valid) {
+      this.authservice.login(loginForm.value);
+    } else {
+      console.log('Wrong information!!!');
+    }
   }
   registerMe() {
     console.log('Register Me clicked!');
