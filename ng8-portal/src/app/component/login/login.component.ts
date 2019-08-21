@@ -29,9 +29,19 @@ export class LoginComponent implements OnInit {
   login(loginForm: FormGroup) {
     this.submitted = true;
     if (this.loginForm.valid) {
-      this.authservice.login(loginForm.value);
-    } else {
-      console.log('Wrong information!!!');
+      this.authservice.login(loginForm.value).subscribe(
+        (res) => {
+          console.log('HTTP response', res);
+          if (res) {
+            sessionStorage.setItem('username', res.username);
+            sessionStorage.setItem('email', res.email);
+            this.router.navigate(['/product-list']);
+          }
+        },
+        (err) => {
+          console.log('HTTP Error', err);
+        }
+      );
     }
   }
   registerMe() {
