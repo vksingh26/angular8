@@ -1,46 +1,47 @@
 <form [formGroup]="registrationForm" (submit)="registration(registrationForm)" novalidate>
-  <div class="register-container" id="register-container">
-    <mat-card class="register-card">
-      <mat-card-header class="register-header">
-        <mat-card-title>User Registration</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="register-content">
-        <mat-form-field class="form-input">
-          <input matInput class="register-field" formControlName="username" placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"  autocomplete="off">
-        </mat-form-field>
-        <mat-error *ngIf="submitted && !!f.username.errors">
-            <div class="alert alert-danger" *ngIf="!!f.username.required">Username is required</div>
-            <div class="alert alert-danger" *ngIf="!!f.username.minlength">Username must be at least 6 characters</div>
-        </mat-error>
-        <mat-form-field class="form-input">
-          <input matInput class="register-field" formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  autocomplete="off">
-        </mat-form-field>
-        <mat-error *ngIf="submitted && !!f.email.errors">
-          <div class="alert alert-danger" *ngIf="!!f.email.errors.required">Email is required</div>
-          <div class="alert alert-danger" *ngIf="!!f.email.errors.email">Email must be a valid email address</div>
-        </mat-error>
-        <mat-form-field class="form-input">
-          <input matInput class="register-field" type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  autocomplete="off">
-        </mat-form-field>
-        <mat-error *ngIf="submitted && !!f.password.errors">
-          <div *ngIf="!!f.password.errors.required">Password is required</div>
-          <div *ngIf="!!f.password.errors.minlength">Password must be at least 6 characters</div>
-        </mat-error>
-        <mat-form-field class="form-input">
-          <input matInput class="register-field" type="password" formControlName="confirmPassword" placeholder="Confirm Password" autocomplete="off">
-        </mat-form-field>
-        <mat-error *ngIf="submitted && !!f.confirmPassword.errors">
-          <div *ngIf="!!f.confirmPassword.errors.required">Confirm Password is required</div>
-          <div *ngIf="!!f.confirmPassword.errors.mustMatch">Passwords must match</div>
-        </mat-error>
-      </mat-card-content>
-      <mat-card-actions class="register-action">
-        <button mat-raised-button type="submit" class="register-button" color="primary">Register</button>
-      </mat-card-actions>
-      <mat-card-actions class="register-action align-center">
-        <span>Already Registered! </span>
-        <span class="cursor" (click)="loginMe()"> Login Me</span>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+    <div class="register-container" id="register-container">
+        <mat-card class="register-card">
+            <mat-card-header class="register-header">
+                <mat-card-title>User Registration</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="register-content">
+                <mat-form-field class="form-input">
+                    <input matInput class="register-field" formControlName="username" placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" minlength="6" autocomplete="off">
+                </mat-form-field>
+                <mat-error *ngIf="submitted && !!f.username.errors">
+                    <div class="alert alert-danger" *ngIf="!!f.username.errors.required">Username is required</div>
+                    <div class="alert alert-danger" *ngIf="!!f.username.errors.minlength">Username must be atleast 6 character long</div>
+                </mat-error>
+
+                <mat-form-field class="form-input">
+                    <input matInput class="register-field" formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" autocomplete="off">
+                </mat-form-field>
+                <mat-error *ngIf="submitted && !!f.email.errors">
+                    <div class="alert alert-danger" *ngIf="!!f.email.errors.required">Email is required</div>
+                    <div class="alert alert-danger" *ngIf="!!f.email.errors.email">Email must be a valid email address</div>
+                </mat-error>
+                <mat-form-field class="form-input">
+                    <input matInput class="register-field" type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" autocomplete="off">
+                </mat-form-field>
+                <mat-error *ngIf="submitted && !!f.password.errors">
+                    <div *ngIf="!!f.password.errors.required">Password is required</div>
+                    <div *ngIf="!!f.password.errors.minlength">Password must be at least 6 characters</div>
+                </mat-error>
+                <mat-form-field class="form-input">
+                    <input matInput class="register-field" type="password" formControlName="confirmPassword" placeholder="Confirm Password" autocomplete="off">
+                </mat-form-field>
+                <mat-error *ngIf="submitted && !!f.confirmPassword.errors">
+                    <div *ngIf="!!f.confirmPassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="!!f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                </mat-error>
+            </mat-card-content>
+            <mat-card-actions class="register-action">
+                <button mat-raised-button type="submit" class="register-button" color="primary">Register</button>
+            </mat-card-actions>
+            <mat-card-actions class="register-action align-center">
+                <span>Already Registered! </span>
+                <span class="cursor" (click)="loginMe()"> Login Me</span>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </form>

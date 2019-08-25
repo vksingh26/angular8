@@ -1,6 +1,6 @@
-
 require('dotenv').config();
 const mongoose = require('mongoose');
+// comment from line 5 to line 14 to start debugging
 mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise;
 mongoose.connection

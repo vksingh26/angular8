@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
-import { ILoginCredentials } from 'src/app/interfaces/login';
+import { ILoginCredentials } from 'src/app/interfaces/auth';
 
 
 @Component({
@@ -49,6 +49,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
+  forgotPassword() {
+    console.log('Forgot Password clicked!');
+    this.router.navigate(['/register']);
+  }
   ngOnInit() {
    this.buildForm();
   }

@@ -1,32 +1,32 @@
 <form [formGroup]="loginForm" (submit)="login(loginForm)" novalidate>
-<div class="login-container" id="login-container">
-  <mat-card class="login-card">
-    <mat-card-header class="login-header">
-      <mat-card-title>User Login</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="login-content">
-      <mat-form-field class="form-input">
-        <input matInput class="login-field" formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" autocomplete="off">
-      </mat-form-field>
-      <mat-error *ngIf="submitted && !!f.email.errors">
-        <div class="alert alert-danger" *ngIf="!!f.email.errors.required">Email is required</div>
-        <div class="alert alert-danger" *ngIf="!!f.email.errors.email">Email must be a valid email address</div>
-      </mat-error>
-      <mat-form-field class="form-input">
-        <input matInput class="login-field" type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" maxlength="46" autocomplete="off">
-        <span class="login-forgot-password">Forgot Password?</span>
-      </mat-form-field>
-      <mat-error *ngIf="submitted && !!f.password.errors">
-        <div class="alert alert-danger" *ngIf="!!f.password.errors.required">Password is required</div>
-      </mat-error>
-    </mat-card-content>
-    <mat-card-actions class="login-action">
-      <button mat-raised-button type="submit" class="login-button" color="primary">Login</button>
-    </mat-card-actions>
-    <mat-card-actions class="login-action align-center">
-      <span>Don't have an account? </span>
-      <span class="cursor" (click)="registerMe()"> Register</span>
-    </mat-card-actions>
-  </mat-card>
-</div>
+    <div class="login-container" id="login-container">
+        <mat-card class="login-card">
+            <mat-card-header class="login-header">
+                <mat-card-title>User Login</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="login-content">
+                <mat-form-field class="form-input">
+                    <input matInput class="login-field" formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" autocomplete="off">
+                </mat-form-field>
+                <mat-error *ngIf="submitted && !!f.email.errors">
+                    <div class="alert alert-danger" *ngIf="!!f.email.errors.required">Email is required</div>
+                    <div class="alert alert-danger" *ngIf="!!f.email.errors.email">Email must be a valid email address</div>
+                </mat-error>
+                <mat-form-field class="form-input">
+                    <input matInput class="login-field" type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" maxlength="46" autocomplete="off">
+                    <span class="login-forgot-password" (click)="forgotPassword()">Forgot Password?</span>
+                </mat-form-field>
+                <mat-error *ngIf="submitted && !!f.password.errors">
+                    <div class="alert alert-danger" *ngIf="!!f.password.errors.required">Password is required</div>
+                </mat-error>
+            </mat-card-content>
+            <mat-card-actions class="login-action">
+                <button mat-raised-button type="submit" class="login-button" color="primary">Login</button>
+            </mat-card-actions>
+            <mat-card-actions class="login-action align-center">
+                <span>Don't have an account? </span>
+                <span class="cursor" (click)="registerMe()"> Register Me</span>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </form>

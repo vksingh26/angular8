@@ -1,8 +1,8 @@
-const {UserRegistration, validateUserReg} = require('../../models/user/registration');
+const { UserRegistration, validateUserReg } = require('../../models/user/registration');
 const bcrypt = require('bcrypt');
 
 exports.postUserRegistration = async(req, res, next) => {
-    const {error} = validateUserReg(req.body);
+    const { error } = validateUserReg(req.body);
     if (error) {
         return res.status(400).send(error.details[0].message);
     }
@@ -12,10 +12,10 @@ exports.postUserRegistration = async(req, res, next) => {
     let userName = await UserRegistration.findOne({
         username: req.body.username
     });
-    if(userName || userEmail){
+    if (userName || userEmail) {
         return res.status(400).send('user already exists!');
-    }else{
-        const {username, email, password, confirmPassword} = req.body;
+    } else {
+        const { username, email, password, confirmPassword } = req.body;
         const createdDate = req.body.createdDate;
         const userRegistration = new UserRegistration({
             username: username,
@@ -31,9 +31,8 @@ exports.postUserRegistration = async(req, res, next) => {
             .save()
             .then((result) => {
                 res.status(201).send('Thank you for your registration!');
-                console.log('User Registered!' + result);
-            }).catch((err) => {
-                console.log(err);
+            })
+            .catch((err) => {
                 res.send('Sorry! Something went wrong.');
             });
     }

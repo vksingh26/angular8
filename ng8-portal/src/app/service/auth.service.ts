@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ILoginCredentials, IRegisterCredentials } from '../interfaces/login';
+import { ILoginCredentials, IRegisterCredentials } from '../interfaces/auth';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UrlConstants } from '../constants/url-constant';
