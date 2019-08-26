@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
         (res) => {
           console.log('HTTP response', res);
           if (res) {
-            sessionStorage.setItem('username', res.username);
-            sessionStorage.setItem('email', res.email);
+            sessionStorage.setItem('username', res.data.username);
+            sessionStorage.setItem('email', res.data.email);
             this.router.navigate(['/product-list']);
           }
         },

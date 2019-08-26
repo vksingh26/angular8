@@ -30,10 +30,19 @@ exports.postUserRegistration = async(req, res, next) => {
         await userRegistration
             .save()
             .then((result) => {
-                res.status(201).send('Thank you for your registration!');
+                const responseData = {
+                    "_id": result._id,
+                    "username": result.username,
+                    "email": result.email
+                }
+                res.status(201).send({
+                    message: 'User has been created successfully!!!',
+                    data: responseData
+                });
             })
             .catch((err) => {
                 res.send('Sorry! Something went wrong.');
             });
     }
+
 }

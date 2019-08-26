@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-const { userLogin, validateUserLogin } = require('../../models/user/login');
+const { UserLogin, validateUserLogin } = require('../../models/user/login');
 const {
     UserRegistration,
     validateUserReg
@@ -15,18 +15,42 @@ exports.postUserLogin = async(req, res, next) => {
         return res.status(400).send(error.details[0].message);
     }
     const user = await UserRegistration.findOne({ email: req.body.email });
-    if (!user) {
-        return res.status(400).send('Incorrect email or password.');
-    }
     const validPassword = await bcrypt.compare(req.body.password, user.password);
-    if (!validPassword) {
+    if (!user || !validPassword) {
         return res.status(400).send('Incorrect email or password!!!');
+    } else {
+        const token = jwt.sign({
+            _id: user._id,
+            iat: new Date().getTime()
+        }, config.get('PrivateKey'), {
+            expiresIn: 600000
+        });
+        const { email, password, loginDate } = req.body;
+        const userLogin = new UserLogin({
+            email: email,
+            password: password,
+            loginDate: loginDate,
+            token: token
+        });
+        const salt = await bcrypt.genSalt(10);
+        userLogin.password = await bcrypt.hash(userLogin.password, salt);
+        await userLogin
+            .save()
+            .then((result) => {
+                const responseData = {
+                    "_id": user._id,
+                    "username": user.username,
+                    "email": user.email
+                }
+                res.header('x-auth-token', token).status(200).send({
+                    message: 'User logged in successfully!!!',
+                    data: responseData
+                });
+            })
+            .catch((err) => {
+                res.send('Sorry! Something went wrong.');
+            })
     }
-    const token = jwt.sign({
-        _id: user._id
-    }, config.get('PrivateKey'), {
-        expiresIn: 900000
-    });
-    const responseData = { "_id": user._id, "username": user.username, "email": user.email }
-    res.header('x-auth-token', token).send(responseData);
+
+
 }

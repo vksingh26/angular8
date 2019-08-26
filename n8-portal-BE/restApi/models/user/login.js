@@ -14,7 +14,10 @@ const loginSchema = new Schema({
     loginDate: {
         type: Date,
         default: Date.now
-    }
+    },
+    token: {
+        type: String,
+    },
 });
 
 function validateUserLogin(user) {
@@ -24,8 +27,8 @@ function validateUserLogin(user) {
     };
     return Joi.validate(user, schema);
 }
-const UserLogin = mongoose.model('userLogin', loginSchema);
+const UserLogin = mongoose.model('UserLogin', loginSchema);
 module.exports = {
-    userLogin: UserLogin,
+    UserLogin: UserLogin,
     validateUserLogin: validateUserLogin
 }
