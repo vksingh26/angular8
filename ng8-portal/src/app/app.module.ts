@@ -40,6 +40,8 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { ProductListComponent } from './component/product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './component/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     PageNotFoundComponent,
     ProductListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
