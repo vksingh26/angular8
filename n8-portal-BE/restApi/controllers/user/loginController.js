@@ -40,15 +40,17 @@ exports.postUserLogin = async(req, res, next) => {
                 const responseData = {
                     "_id": user._id,
                     "username": user.username,
-                    "email": user.email
+                    "email": user.email,
                 }
                 res.header('x-auth-token', token).status(200).send({
                     message: 'User logged in successfully!!!',
-                    data: responseData
+                    data: responseData,
+                    isloggedIn: true
                 });
+
             })
             .catch((err) => {
-                res.send('Sorry! Something went wrong.');
+                res.send({ message: 'Sorry! Something went wrong.', isloggedIn: false });
             })
     }
 

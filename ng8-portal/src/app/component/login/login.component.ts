@@ -1,8 +1,10 @@
+import { map, take } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { ILoginCredentials } from 'src/app/interfaces/auth';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -13,7 +15,9 @@ import { ILoginCredentials } from 'src/app/interfaces/auth';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
-  constructor(private router: Router, private authservice: AuthService, private form: FormBuilder) { }
+  isLoggedIn$: Observable<boolean>;
+  private loggedIn = new BehaviorSubject<boolean>(false);
+  constructor(private router: Router, private authService: AuthService, private form: FormBuilder) { }
 
   public buildForm() {
     this.loginForm = this.form.group({
@@ -28,33 +32,36 @@ export class LoginComponent implements OnInit {
 
   login(loginForm: FormGroup) {
     this.submitted = true;
+
     if (this.loginForm.valid) {
-      this.authservice.login(loginForm.value).subscribe(
+      this.authService.login(loginForm.value).subscribe(
         (res) => {
-          console.log('HTTP response', res);
           if (res) {
+            this.router.navigate(['product-list']);
             sessionStorage.setItem('username', res.data.username);
             sessionStorage.setItem('email', res.data.email);
-            this.router.navigate(['/product-list']);
+            setTimeout(() => {
+              this.loggedIn.next(true);
+            }, 100);
+
           }
         },
         (err) => {
-          console.log('HTTP Error', err);
+          throw err;
         }
       );
     }
   }
   registerMe() {
     console.log('Register Me clicked!');
-    this.router.navigate(['/register']);
+    this.router.navigate(['register']);
   }
 
   forgotPassword() {
     console.log('Forgot Password clicked!');
-    this.router.navigate(['/register']);
+    this.router.navigate(['register']);
   }
   ngOnInit() {
-   this.buildForm();
+    this.buildForm();
   }
-
 }

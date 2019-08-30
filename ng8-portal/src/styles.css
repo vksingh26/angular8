@@ -2774,12 +2774,12 @@ th.mat-header-cell {
 }
 
 .mat-toolbar {
-    background: #212121;
+    background: #03ABF6;
     color: #fff;
 }
 
 .mat-toolbar.mat-primary {
-    background: #c2185b;
+    background: #03ABF6;
     color: #fff;
 }
 

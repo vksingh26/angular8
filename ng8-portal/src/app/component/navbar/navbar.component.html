@@ -1,8 +1,9 @@
-<mat-toolbar>
+<mat-toolbar *ngIf="isLoggedIn$ | async">
     <mat-toolbar-row>
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
+        <button mat-button (click)="onLogout()" *ngIf="isLoggedIn$ | async">Logout</button>
     </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
@@ -10,6 +11,3 @@
         <ng-material-multilevel-menu [configuration]='config' [items]='appitems' (selectedItem)='selectedItems($event)' (selectedLabel)='selectedLabels($event)'></ng-material-multilevel-menu>
     </mat-sidenav>
 </mat-sidenav-container>
-<mat-toolbar-row class="footer">
-    <span>Custom Toolbar</span>
-</mat-toolbar-row>

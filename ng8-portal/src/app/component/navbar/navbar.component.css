@@ -32,16 +32,12 @@ h1.sidenav-app-name {
 }
 
 .mat-drawer.mat-drawer-side {
-    min-width: 250px;
+    min-width: 200px;
 }
 
 .mat-toolbar-row,
 .mat-toolbar-single-row {
+    background-color: cornflowerblue;
+    border-bottom: 2px solid cornflowerblue;
     color: #ffffff;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    z-index: 1000;
 }

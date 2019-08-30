@@ -1,4 +1,7 @@
+import { AppComponent } from './../../app.component';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor() {
+  isLoggedIn$: Observable<boolean>;
+  constructor(private authService: AuthService) {
   }
   appitems = [
     {
@@ -43,22 +47,24 @@ export class NavbarComponent implements OnInit {
     interfaceWithRoute: true,
     classname: 'my-custom-class',
     listBackgroundColor: `#ffffff`,
-    fontColor: `rgb(8, 54, 71)`,
+    fontColor: `#333`,
     backgroundColor: `#ffffff`,
     selectedListFontColor: `red`,
     highlightOnSelect: true,
     collapseOnSelect: true,
-    rtlLayout: false
+    rtlLayout: false,
+    fixed: false
   };
   ngOnInit() {
+    this.isLoggedIn$ = this.authService.isLoggedIn;
   }
-
+  onLogout() {
+    this.authService.logout();
+  }
   selectedItems(e) {
     console.log(e);
   }
   selectedLabels(e) {
     console.log(e);
-  }
-  logout(val: any) {
   }
 }

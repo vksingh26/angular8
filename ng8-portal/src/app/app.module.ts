@@ -41,6 +41,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { ProductListComponent } from './component/product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -50,7 +51,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     RegistrationComponent,
     PageNotFoundComponent,
     ProductListComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +100,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     MatTooltipModule,
     MatTreeModule,
     NgMaterialMultilevelMenuModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
