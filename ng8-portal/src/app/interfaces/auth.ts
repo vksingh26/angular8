@@ -17,3 +17,6 @@ export interface IChangePassword {
   current_password: string;
   new_password?: string;
 }
+export interface IForgotPassword {
+  email: string;
+}

@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
 
   forgotPassword() {
     console.log('Forgot Password clicked!');
-    this.router.navigate(['register']);
+    this.router.navigate(['forgot-password']);
   }
   ngOnInit() {
     this.buildForm();

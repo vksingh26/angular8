@@ -42,6 +42,7 @@ import { ProductListComponent } from './component/product-list/product-list.comp
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     PageNotFoundComponent,
     ProductListComponent,
     NavbarComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

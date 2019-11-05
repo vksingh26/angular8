@@ -1,5 +1,6 @@
 .login-container,
-.register-container {
+.register-container,
+.fPass-container {
     width: 100%;
     height: 100%;
     font-size: 100%;
@@ -12,13 +13,15 @@
 }
 
 .login-header,
-.register-header {
+.register-header,
+.fPass-header {
     display: flex;
     justify-content: center;
 }
 
 .login-card,
-.register-card {
+.register-card,
+.fPass-card {
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -33,7 +36,8 @@
 }
 
 .login-card:after,
-.register-card:after {
+.register-card:after,
+.fPass-card:after {
     content: '';
     background: #000;
     width: 100%;
@@ -59,27 +63,33 @@
 .login-action,
 .register-header,
 .register-content,
-.register-action {
+.register-action,
+.fPass-header,
+.fPass-content,
+.fPass-action {
     position: relative;
     z-index: 1;
     color: #fff
 }
 
 .login-content,
-.register-content {
+.register-content,
+.fPass-content {
     display: grid;
     width: 80%;
     margin: 0 auto;
 }
 
 .login-action,
-.register-action {
+.register-action,
+.fPass-action {
     width: 82%;
     margin: 5px auto 5px 10%;
 }
 
 .login-field,
-.register-field {
+.register-field,
+.fPass-field {
     max-width: 400px;
     color: #fff;
     padding: 10px 5px 10px 0;
@@ -87,7 +97,8 @@
 }
 
 .login-button,
-.register-button {
+.register-button,
+.fPass-button {
     width: 100%;
     padding: 5px 0;
     font-size: 16px;

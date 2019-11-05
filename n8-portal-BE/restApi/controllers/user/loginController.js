@@ -53,6 +53,4 @@ exports.postUserLogin = async(req, res, next) => {
                 res.send({ message: 'Sorry! Something went wrong.', isloggedIn: false });
             })
     }
-
-
 }
